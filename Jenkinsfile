@@ -3,14 +3,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-            script {
-                def nodejs = tool name: 'NodeJS 16'  // Le nom défini dans la configuration de NodeJS Plugin
-                env.PATH = "${nodejs}/bin:${env.PATH}"
+                echo 'Building the project...'
             }
-            sh 'node -v'    // Vérifie que Node.js est installé
-            sh 'npm -v'
-            sh 'npm install'
-    }
         }
         stage('Test') {
             steps {
