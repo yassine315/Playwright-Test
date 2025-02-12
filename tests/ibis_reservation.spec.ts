@@ -4,7 +4,7 @@ test('Test de réservation sur ibis.accor.com', async ({ page }) => {
   // Aller sur le site
   await page.goto('https://ibis.accor.com/en.html');
 
-  await page.waitForSelector('#onetrust-accept-btn-handler', { timeout: 5000 });
+  await page.waitForSelector('#onetrust-accept-btn-handler', { timeout: 10000 });
 
   // Cliquer sur le bouton "Accept all"
   await page.click('#onetrust-accept-btn-handler');
