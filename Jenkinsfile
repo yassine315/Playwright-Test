@@ -17,14 +17,14 @@ pipeline {
     stage('Run Playwright Tests') {
       steps {
         echo 'Running Playwright tests...'
-        sh 'npx playwright test --reporter=list'  // Exécute les tests Playwright
+        sh 'npx playwright test --reporter=html --output=./test-results'  // Exécute les tests Playwright
       }
     }
 
     stage('Generate Playwright Report') {
       steps {
         echo 'Generating Playwright report...'
-        sh 'npx playwright show-report'  // Affiche le rapport généré par Playwright
+        sh 'npx playwright show-report ./test-results'  // Affiche le rapport généré par Playwright
       }
     }
   }
